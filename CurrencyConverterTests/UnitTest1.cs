@@ -24,7 +24,6 @@ namespace CurrencyConverterTests
             CurrencyConverterController home = new CurrencyConverterController(mockRepo.Object);
             JsonResult result = (JsonResult)await home.ConvertAmountCurrencies("USD", "PKR", 10);
 
-
             var json = JsonConvert.SerializeObject(result.Value);
 
             var deserializeData = JsonConvert.DeserializeObject<ResponseObject>(json);
